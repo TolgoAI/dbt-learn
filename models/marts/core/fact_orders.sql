@@ -3,7 +3,7 @@ with orders as  (
 ),
 
 payments as (
-    select * from {{ ref('stag_payments') }}
+    select * from {{ ref('stg_payments') }}
 ),
 
 order_payments as (
@@ -14,6 +14,7 @@ order_payments as (
     from payments
     group by 1
 ),
+
 final as (
 
     select
